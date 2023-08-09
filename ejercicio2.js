@@ -10,13 +10,13 @@ const moduloConstructor = require("./objetoConstructor.js");
 const moduloLiteral = require("./objetoLiteral.js");
 let prompt = require('prompt-sync')();
 
-let opcion = "";
-
+let opcion = "";//Permite verificar la opción que el usuario ha digitado
+//Se ejecuta cada vez que se reciba un valor diferente de lo esperado
 while (opcion.toLowerCase() != 's' && opcion.toLowerCase() != 'n') {
     opcion = prompt("Desea crear el Objeto perro?: (S/N) ");
 
     switch (opcion.toLowerCase()) {
-        case 's':
+        case 's'://Caso en que el usuario si desea crear los objetos
             //Si el usuario desea crear los objetos, se solicitan los datos y se crean los objetos
             let nombre = prompt("Ingrese el nombre del perro: ");
             let raza = prompt("Ingrese la raza del perro: ");
@@ -64,7 +64,7 @@ while (opcion.toLowerCase() != 's' && opcion.toLowerCase() != 'n') {
                                     Perro.Jugar();
                                     break;
                             
-                                default:
+                                default://Caso en que el usuario hizo una selección inválida
                                         console.log("¿" + metodo + "? ¿Es enserio?, Por favor elija una opción válida.");
                                     break;
                             }
@@ -94,17 +94,17 @@ while (opcion.toLowerCase() != 's' && opcion.toLowerCase() != 'n') {
                         }
                         break;
                 
-                    default:
+                    default://Caso en que el usuario hizo una selección inválida
                         console.log("¿" + opcion + "? ¿Es enserio?, Por favor elija una opción válida.");
                         break;
                 }
             }
             break;
-        case 'n':
+        case 'n'://Caso en que el usuario no desea crear los objetos
             console.log("Hasta pronto! :D");
             break;
     
-        default:
+        default://Caso en que el usuario hizo una selección inválida
             console.log("¿" + opcion + "? ¿Es enserio?, Por favor elija una opción válida.");
             break;
     } 
